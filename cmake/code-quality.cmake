@@ -11,7 +11,7 @@ function(format target directory )
     file(GLOB_RECURSE SOURCE_FILES FOLLOW_SYMLINKS LIST_DIRECTORIES false ${EXPRESSION})
 
     add_custom_command(TARGET ${target} PRE_BUILD 
-        COMMAND ${CLANG-FORMAT_PATH} -i --style=file:${CMAKE_SOURCE_DIR}/clang-format ${SOURCE_FILES}
+        COMMAND ${CLANG-FORMAT_PATH} -i --style=file:${CLANG_STYLE_PATH} ${SOURCE_FILES}
     )
 endfunction()
 
